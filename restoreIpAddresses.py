@@ -11,7 +11,6 @@ def restoreIpAddresses(s: str):
             for i in range(min(3,len(s))):
                 p,n=s[:i+1],s[i+1:];                
                 if p and 0<=int(p)<=255 and str(int(p))==p:
-                    print(p,n)
                     backstr(n,tmp+[p]);
     backstr(s,[]);
     return res;
