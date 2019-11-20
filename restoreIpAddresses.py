@@ -15,5 +15,8 @@ def restoreIpAddresses(s: str):
     backstr(s,[]);
     return res;
 
-s="25525511135"
-print(restoreIpAddresses(s))
+s="255255115"
+print(restoreIpAddresses(s));
+# ['2.55.255.115', '25.5.255.115', '25.52.55.115', 
+# '255.2.55.115', '255.25.5.115', '255.25.51.15',
+#  '255.255.1.15', '255.255.11.5']
