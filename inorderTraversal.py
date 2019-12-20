@@ -36,3 +36,4 @@ def inorderTraversal(root: TreeNode):
             res.append(p.val);
             p=p.right;
     return res;
+
