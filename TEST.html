@@ -1,0 +1,11 @@
+<div id="test" data-name="小虎" data-userid="1">click</div>
+<script>
+  var test = document.getElementById('test');
+  test.onclick=()=>{
+    console.log(this)
+      this.dataset.name = 'Byron';
+      console.log(test.dataset.name);
+      console.log(test.dataset.userid)
+  }
+    
+</script>
