@@ -1,3 +1,4 @@
-p = [1, 2]
-
-print(p[2:2:2])
+p = {"qw": 12}
+h = p
+del h
+print(p, id(p))
