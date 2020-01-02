@@ -21,16 +21,16 @@
 '''
 
 
-# class Solution:
-#     def largestNumber(self, nums: List[int]) -> str:
-#         if not nums:
-#             return ''
-#         from functools import cmp_to_key
-#         nums = map(str, nums)
-#         # 采用cmp_to_key 函数，可以接受两个参数
-#         nu = sorted(nums, key=cmp_to_key(lambda x, y: int(y+x)-int(x+y)))
-#         res = ''.join(nu).lstrip('0')
-#         return res or '0'
+class Solution:
+    def largestNumber(self, nums: List[int]) -> str:
+        if not nums:
+            return ''
+        from functools import cmp_to_key
+        nums = map(str, nums)
+        # 采用cmp_to_key 函数，可以接受两个参数
+        nu = sorted(nums, key=cmp_to_key(lambda x, y: int(y+x)-int(x+y)))
+        res = ''.join(nu).lstrip('0')
+        return res or '0'
 
 # from functools import cmp_to_key
 # d: dict = [12, 2, 1324, 23, 1, 23, 44, 11]
@@ -45,5 +45,3 @@
 # nu = sorted(nums, key=cmp_to_key(lambda x, y: int(x+y)-int(y+x)))
 
 # print(nu)
-
-
