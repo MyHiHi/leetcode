@@ -1,11 +1,25 @@
 <div id="test" data-name="小虎" data-userid="1">click</div>
 <script>
-  var test = document.getElementById('test');
-  test.onclick=()=>{
-    console.log(this)
-      this.dataset.name = 'Byron';
-      console.log(test.dataset.name);
-      console.log(test.dataset.userid)
-  }
-    
+test=document.getElementById('test');
+window.dataset={}
+test.onclick=function (){
+  console.log(test.dataset.name,this.dataset)
+}
+
+
+execute=(func) =>{
+  this.NAMEEEEEEEEEEEEEEEEEEEEEE="GGGGGGGGGGGGGGGGGGGGGGGGGG"
+  console.log("this: ",this);
+  return func();
+}
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+
+  this.getFullName = ()=> `${this.firstName} ${this.lastName}`
+}
+
+const agent = new Person('前端', '小智');
+
+console.log(execute(agent.getFullName)); // => '前端 小智'
 </script>

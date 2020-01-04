@@ -1,7 +1,5 @@
-def hammingWeight(n: int):
-    return len(list(filter(lambda s: s == "1", str(n))))
+import math
 
-
-n = "00000000000000000000000000001011"
-
-print(hammingWeight(n))
+c = math.sqrt(64) % 2
+p = str(c).split('.')
+print(c, p)
