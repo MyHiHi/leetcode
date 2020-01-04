@@ -1,5 +1,5 @@
-import math
-
-c = math.sqrt(64) % 2
-p = str(c).split('.')
-print(c, p)
+p = 123
+p1 = str(p)
+print(list(map(lambda x: int(x), p1)))
+from collections import re
+reduce(lambda x,y: x+y,[12,3,4,5 ])
