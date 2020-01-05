@@ -1,25 +1,33 @@
+<label for="test">显示</label>
 <div id="test" data-name="小虎" data-userid="1">click</div>
+<a onclick="ci(this)">ci</a>
 <script>
-test=document.getElementById('test');
-window.dataset={}
-test.onclick=function (){
-  console.log(test.dataset.name,this.dataset)
-}
+  test = document.getElementById('test');
+  window.dataset = {}
+
+  function ci(ev) {
+    cd = Object.keys(ev);
+    console.log('ev:', cd)
+  }
+  test.onclick = function () {
+    console.log(test.dataset.name, this.dataset)
+  }
 
 
-execute=(func) =>{
-  this.NAMEEEEEEEEEEEEEEEEEEEEEE="GGGGGGGGGGGGGGGGGGGGGGGGGG"
-  console.log("this: ",this);
-  return func();
-}
-function Person(firstName, lastName) {
-  this.firstName = firstName;
-  this.lastName = lastName;
+  execute = (func) => {
+    this.NAMEEEEEEEEEEEEEEEEEEEEEE = "GGGGGGGGGGGGGGGGGGGGGGGGGG"
+    console.log("this: ", this);
+    return func();
+  }
 
-  this.getFullName = ()=> `${this.firstName} ${this.lastName}`
-}
+  function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
 
-const agent = new Person('前端', '小智');
+    this.getFullName = () => `${this.firstName} ${this.lastName}`
+  }
 
-console.log(execute(agent.getFullName)); // => '前端 小智'
+  const agent = new Person('前端', '小智');
+
+  console.log(execute(agent.getFullName)); // => '前端 小智'
 </script>
