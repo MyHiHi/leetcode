@@ -2,6 +2,34 @@
 <div id="test" data-name="小虎" data-userid="1">click</div>
 <a onclick="ci(this)">ci</a>
 <script>
+  /*async function test() {
+    await setTimeout(() => {
+      resolve('setTime')
+    }, 1000)
+    console.log("UIUIUI")
+    return 12;
+  }
+  console.log(test())
+  test().then((res) => {
+    console.log('*****', res)
+  })*/
+
+  ajax = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('发送.....')
+        resolve({
+          "data": "day01"
+        })
+      }, 300)
+    })
+  }
+  ajax().then(res => {
+    console.log("接收到:", res)
+  })
+  // test().then(res=>{
+  //   console.log('8888')
+  // })
   test = document.getElementById('test');
   window.dataset = {}
 
