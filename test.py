@@ -1,3 +1,2 @@
-p = 'asdsd'
-c = 'wreew'
-print((set(p)-set(c)))
+s = "asde"
+print(s[::-1])
