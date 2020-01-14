@@ -1,2 +1,4 @@
-p = [12, 2, 3, 45, 5]
-filter(lambda x:x not in p)
+a, b = 1, 2
+
+a, b = a+b, a+10
+print(a, b)
