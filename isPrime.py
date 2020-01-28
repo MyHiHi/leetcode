@@ -1,5 +1,5 @@
 # 判断质数
-def isPrime(n: int):
+def isPrime1(n: int):
     if n == 2:
         return True
     if n <= 1 or n % 2 == 0:
@@ -9,7 +9,25 @@ def isPrime(n: int):
             return False
     return True
 
+
+def isPrime2(n: int):
+    if n < 2:
+        return False
+    i = 2
+    while i*i <= n:
+        if n % i == 0:
+            return False
+        i += 1
+    return True
+
+
+# for i in range(40):
+#     if isPrime2(i):
+#         print(i)
+
 # 得到范围内的所有质数
+
+
 def getAllPrime(n: int):
     prime = [1 for i in range(n+1)]
     prime[0] = 0
@@ -22,4 +40,4 @@ def getAllPrime(n: int):
             print('_____> ', i)
 
 
-getAllPrime(50)
+# getAllPrime(50)
