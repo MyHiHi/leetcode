@@ -1,2 +1,2 @@
-for i in range(-5, 5):
-    print(i % 5)
+r = 'asdr.fe.rg'
+print(r[:r.find('m')])
