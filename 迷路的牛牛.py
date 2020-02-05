@@ -30,7 +30,8 @@ c=sys.stdin.readlines();
 r=[k.strip() for k in c];
 N=int(r[0]);
 S=r[1];
-# 记录总共向右转了几次，负数也算
+# 记录总共向右转了几次，负数也算;
+# 负数是沿着direct数组逆时针走，正数是顺时针走
 coR=0;
 # 顺时针编号
 direct=['N','E','S','W'];
