@@ -1,17 +1,15 @@
-import sys
-c = sys.stdin.readlines()
-n = int(c[0])
-x1 = list(map(int, c[1].split()))
-y1 = list(map(int, c[2].split()))
-x2 = list(map(int, c[3].split()))
-y2 = list(map(int, c[4].split()))
-res = 0
-for x in x1:
-    for y in y1:
-        co = 0
-        for i in range(n):
-            if x >= x1[i] and x < x2[i] and y >= y1[i] and y < x2[i]:
-                co += 1
-        res = max(co, res)
+def permutations(arr, position, end):
 
-print(res)
+    if position == end:
+        print(arr)
+
+    else:
+        for index in range(position, end):
+
+            arr[index], arr[position] = arr[position], arr[index]
+            permutations(arr, position+1, end)
+            arr[index], arr[position] = arr[position], arr[index]
+
+
+arr = ["a", "b", "c"]
+permutations(arr, 0, len(arr))
