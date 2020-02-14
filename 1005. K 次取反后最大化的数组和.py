@@ -1,7 +1,7 @@
-
+# -*- encoding: utf-8 -*-
 '''
 @File    :   1005. K 次取反后最大化的数组和.py
-@Time    :   2020/02/14 10:54:24
+@Time    :   2020/02/14 10:54:54
 @Author  :   Zhang tao 
 @Version :   1.0
 @Desc    :   1005. K 次取反后最大化的数组和.py
@@ -28,30 +28,34 @@
 '''
 # 代码一
 # 始终只对最小值求反
+
+
 class Solution:
     def largestSumAfterKNegations(self, A: List[int], K: int) -> int:
         for i in range(K):
-            A.sort();
-            A[0]=-A[0];
+            A.sort()
+            A[0] = -A[0]
         return sum(A)
-      
-      
+
+
 # 代码二
 class Solution:
     def largestSumAfterKNegations(self, A: List[int], K: int) -> int:
-        A.sort();
-        tmin=0;
-        le=len(A);
+        A.sort()
+        tmin = 0
+        le = len(A)
         # 始终只对最小值求反
         for i in range(le):
-            if A[i]<0:
-                A[i]*=-1;
-                tmin=tmin if A[tmin]<A[i] else i;
-                K-=1;
-                if K==0:break;
+            if A[i] < 0:
+                A[i] *= -1
+                tmin = tmin if A[tmin] < A[i] else i
+                K -= 1
+                if K == 0:
+                    break
             else:
               # 此时A全是正数，就对最小值反复求反
-                tmin=tmin if A[tmin]<A[i] else i;
-                if K%2!=0:A[tmin]*=-1;
-                break;
+                tmin = tmin if A[tmin] < A[i] else i
+                if K % 2 != 0:
+                    A[tmin] *= -1
+                break
         return sum(A)
