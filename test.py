@@ -1,13 +1,17 @@
-from functools import cmp_to_key
+
+def out(arr,start,end,res):
+  if start==end:
+    res+=[arr[:]];
+  else:
+    for i in range(start,end):
+      arr[i],arr[start]=arr[start],arr[i];
+      out(arr,start+1,end,res);
+      arr[i],arr[start]=arr[start],arr[i];
 
 
-def cmp(a, b):
-    if a<b:
-      return -1;
-    else:
-      return 1
+lis = [1, 2, 3]
+res = []
+out(lis, 0,len(lis), res)
+print(res)
 
 
-p = [1, 2, 3, 1, 57, 3, 2, 100]
-p=sorted(p,key=cmp_to_key(cmp))
-print(p)
