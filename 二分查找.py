@@ -20,6 +20,8 @@ def binary_search(p:List, k):
     return l
 # 在按照非递减顺序排好序的数组中找到第一个大于给定值key的那个数索引，
     #  * 其基本实现原理是二分查找
+    # from bisect import bisect
+    # bisect(p,k)
 def binary_search(p:List, k):
     l, r = 0, len(p)-1
     while l < r:
