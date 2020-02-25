@@ -1,23 +1,17 @@
-s = input().strip()
+
+def quicksort(arr):
+    left,right=[],[];
+    if len(arr)<2:
+      return arr;
+    n=len(arr)
+    point=arr.pop(n//2);
+    for k in arr:
+      if k<point:
+        left+=[k];
+      else:
+        right+=[k];
+    return quicksort(left)+[point]+quicksort(right)
 
 
-class Solution:
-    def getCenter(self, s, i, j):
-        while i >= 0 and j < len(s) and s[i] == s[j]:
-            i -= 1
-            j += 1
-        return (i+1, j-i-1)
-
-    def longestPalindrome(self, s: str) -> str:
-        n, start, maxLen = len(s), 0, 0
-        for i in range(n):
-            p1 = self.getCenter(s, i, i)
-            p2 = self.getCenter(s, i, i+1)
-            p = max([p1, p2], key=lambda i: i[1])
-            if maxLen < p[1]:
-                start = p[0]
-                maxLen = p[1]
-        return s[start:start+maxLen]
-
-
-print(Solution().longestPalindrome(s))
+arr = [1, 2, 3, 1, 2, 4, 5322, 1,232,12,1,45,6,45,3453,432,42,31,2312,313,1,434]
+print(quicksort(arr))
