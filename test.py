@@ -1,13 +1,23 @@
-def r(n, myM):
-  
-  if n == 0 or n == 1:
-      return 1
-  if n not in myM:
-      myM[n] = r(n-1, myM)+r(n-2, myM)
-      return myM[n] 
-  else:
-      return myM[n]
+s = input().strip()
 
 
-x = r(3, {})
-print(x)
+class Solution:
+    def getCenter(self, s, i, j):
+        while i >= 0 and j < len(s) and s[i] == s[j]:
+            i -= 1
+            j += 1
+        return (i+1, j-i-1)
+
+    def longestPalindrome(self, s: str) -> str:
+        n, start, maxLen = len(s), 0, 0
+        for i in range(n):
+            p1 = self.getCenter(s, i, i)
+            p2 = self.getCenter(s, i, i+1)
+            p = max([p1, p2], key=lambda i: i[1])
+            if maxLen < p[1]:
+                start = p[0]
+                maxLen = p[1]
+        return s[start:start+maxLen]
+
+
+print(Solution().longestPalindrome(s))
