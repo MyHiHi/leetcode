@@ -1,12 +1,13 @@
-def gcdOfStrings(str1: str, str2: str) -> str:
-    for i in range(len(str1), -1, -1):
-        print("I : ",i)
-        print(">>> ", str1.replace(str1[:i], ""), str2.replace(str1[:i], ""))
-        if str1.replace(str1[:i], "") == "" and str2.replace(str1[:i], "") == "":
-            return str1[:i]
-    return ""
+def r(n, myM):
+  
+  if n == 0 or n == 1:
+      return 1
+  if n not in myM:
+      myM[n] = r(n-1, myM)+r(n-2, myM)
+      return myM[n] 
+  else:
+      return myM[n]
 
 
-str1, str2 = "ABABAB", "ABAB"
-# print("MMM: ", str2.replace(str2[: 50], ""))
-print(gcdOfStrings(str1, str2))
+x = r(3, {})
+print(x)
