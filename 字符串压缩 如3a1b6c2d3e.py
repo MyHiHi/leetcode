@@ -21,7 +21,7 @@ aaabccccccdd
 输出
 3a1b6c2d
 '''
-# "0"的作用是循环到字符串最后还能把(k,v)添加到res中
+# "0"的作用是循环到字符串最后还能把(k,v)添加到res中 结果才对
 p = input().strip()+"0"
 res=""
 le=len(p)
