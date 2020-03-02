@@ -1,18 +1,16 @@
-S = input().strip()
-le = len(S)
-res = 0
+from collections import Counter
+p = "aaabccccccddeee"+"0"
 
-
-def isH(i, j, S):
-    global res
-    while i >= 0 and j < le and S[i] == S[j]:
-        print('>>>>>>: ', S[i:j])
-        i -= 1
-        j += 1
-        res += 1
-
-
-for i in range(le):
-    isH(i, i+1, S)
-    isH(i, i, S)
+# p = input().strip()
+res = ""
+le = len(p)
+k, v = p[0], 1
+for i in range(1, le):
+    s = p[i]
+    if s != k:
+        res += str(v)+k
+        k = s
+        v = 1
+    else:
+        v += 1
 print(res)
