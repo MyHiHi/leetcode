@@ -1,4 +1,9 @@
-from collections import Counter
-arr = [1, 2, 2, 6, 6, 6, 6, 7, 10]
-p = Counter(arr).most_common(2)
-print(p)
+num=list( map(int,input().strip().split(',')));
+su=0;
+maxn=0;
+for i in num:
+    su+=i;
+    su = su if su>0 else 0;
+    print('i:   ',maxn,su)
+    maxn=max(maxn,su);
+print(su)
