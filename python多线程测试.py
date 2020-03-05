@@ -1,3 +1,13 @@
+# -*- encoding: utf-8 -*-
+'''
+@File    :   python多线程测试.py
+@Time    :   2020/03/05 22:59:35
+@Author  :   Zhang tao 
+@Version :   1.0
+@Desc    :   python多线程测试.py
+'''
+
+
 import threading
 import time
 
