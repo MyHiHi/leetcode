@@ -46,7 +46,18 @@ class Solution:
             if not root or root.val==val:return root;
             return get(root.left,val) if root.val>val else get(root.right,val)
         return get(root,val)
-      
+  #  scala
+object Solution {
+    def searchBST(root: TreeNode, `val`: Int): TreeNode = {
+        if(root==null || root.value==`val`){
+            root
+        }
+        else{
+            if (root.value>`val`) searchBST(root.left,`val`) else searchBST(root.right,`val`)
+        }
+
+    }
+}   
 # 代码二
 # 普通搜索：没有用左<根<右
 
