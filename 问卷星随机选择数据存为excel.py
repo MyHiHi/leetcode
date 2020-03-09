@@ -1,3 +1,13 @@
+# -*- encoding: utf-8 -*-
+'''
+@File    :   问卷星随机选择数据存为excel.py
+@Time    :   2020/03/09 16:47:23
+@Author  :   Zhang tao 
+@Version :   1.0
+@Desc    :   问卷星随机选择数据存为excel.py
+'''
+
+
 def getData():
     data = {}
     from pyquery import PyQuery as pq
