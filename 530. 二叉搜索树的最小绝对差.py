@@ -48,3 +48,31 @@ class Solution:
             inOrder(root.right);
         inOrder(root);
         return self.res
+      
+# scala
+/**
+ * Definition for a binary tree node.
+ * class TreeNode(var _value: Int) {
+ *   var value: Int = _value
+ *   var left: TreeNode = null
+ *   var right: TreeNode = null
+ * }
+ */
+object Solution {
+    def getMinimumDifference(root: TreeNode): Int = {
+        var min=Int.MaxValue;
+        var pre:TreeNode=null
+        def inOrder(root:TreeNode):Unit={
+            if (Option(root).nonEmpty){
+                inOrder(root.left);
+                if (pre!=null)
+                    min=Math.min(min,Math.abs(pre.value-root.value));
+                pre=root;
+                inOrder(root.right)
+            }
+        }
+        inOrder(root);
+        min
+
+    }
+}
