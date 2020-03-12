@@ -23,9 +23,9 @@ object Test {
     def sayH:String="Hi!!"
   }
    def main(args: Array[String]) {
-     val f=new MyFun("Leo");
-     println(f.sayH)
-     println(f.name)
+    //  val f=new MyFun("Leo");
+    //  println(f.sayH)
+    //  println(f.name)
     //  val s=new Student("Leo",12);
     //  println(s.sayH)
     //  println(s.age)
@@ -33,6 +33,8 @@ object Test {
 
     //  val array=Array[Int](12,2,3,4,5)
     //  findNum("ssa2134ff41f5",array)
+    // import math;
+    println(math.abs(-123))
 
    }
 }
