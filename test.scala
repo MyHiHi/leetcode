@@ -1,57 +1,18 @@
-/**
- * Definition for a binary tree node.
- * class TreeNode(var _value: Int) {
- *   var value: Int = _value
- *   var left: TreeNode = null
- *   var right: TreeNode = null
- * }
- */
-object Solution {
-    def getMinimumDifference(root: TreeNode): Int = {
-        var min=Int.MaxValue;
-        var pre=null
-        def inOrder(root:TreeNode):Unit={
-            if (Option(root).nonEmpty){
-                inOrder(root.left);
-                if (pre!=null)
-                    min=Math.min(min,Math.abs(pre.value-root.value));
-                pre=root;
-                inOrder(root.right)
-            }
-        }
-        inOrder(root);
-        min
-
+object Hello{
+  implicit def man2Superman(man:Man):Superman=new Superman(man.name)
+  class Man(val name:String){
+    def eat(food:String)={
+      println(s"I am a man called $name eating $food")
     }
-}
-
-/**
- * Definition for a binary tree node.
- * class TreeNode(var _value: Int) {
- *   var value: Int = _value
- *   var left: TreeNode = null
- *   var right: TreeNode = null
- * }
- */
-object Solution {
-    def getMinimumDifference(root: TreeNode): Int = {
-         var pre:TreeNode = null;
-  var min:Int = Int.MaxValue;
-//中序遍历
-  def minDiffInBST(root: TreeNode): Int = {
-    middleOrderTraverse(root);
-     min;
   }
-
-  def middleOrderTraverse(root: TreeNode):Unit  = {
-    if(Option(root).isEmpty) return;
-    middleOrderTraverse(root.left);
-    if(pre != null){
-        min=Math.min(min,Math.abs(root.value -pre.value))
+  class Superman(val name:String){
+    def fly()={
+      println(s"I am a superman called $name flying")
     }
-    pre =root;
-    middleOrderTraverse(root.right);
   }
-  minDiffInBST(root)
-    }
+  def main(args: Array[String]): Unit = {
+    val man=new Man("Leo");
+    man.eat("西红柿");
+    man.fly()
+  }
 }
