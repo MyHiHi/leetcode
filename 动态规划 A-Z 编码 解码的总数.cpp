@@ -36,15 +36,10 @@ int decoder(string s)
   for (int t = 2; t <= le; t++)
   {
     int m = s[t - 2], n = s[t - 1];
-    if (n != '0')
-    {
-      cout << "----" << s.substr(t - 1, t)<<endl;
-      dp[t] += dp[t - 1];
-    }
+    dp[t] += n != 0 ? dp[t - 1] : 0;
 
     if (m == '1' || (m == '2' && n <= '6'))
     {
-      cout << "----" << s.substr(t - 2, t) << endl;
       dp[t] += dp[t - 2];
     }
   }
