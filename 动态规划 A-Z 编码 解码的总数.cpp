@@ -27,24 +27,34 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
-int decoder(string s){
-    int le=s.size();
-   int *dp=new int[le+1];
-    dp[0]=1;
-    dp[1]=1;
-    for (int t=2;t<=le;t++){
-        int m=s[t-2],n=s[t-1];
-        if (n!='0')
-            dp[t]+=dp[t-1];
-        if (m=='1' || (m=='2' && n<='6'))
-            dp[t]+=dp[t-2];
+int decoder(string s)
+{
+  int le = s.size();
+  int *dp = new int[le + 1];
+  dp[0] = 1;
+  dp[1] = 1;
+  for (int t = 2; t <= le; t++)
+  {
+    int m = s[t - 2], n = s[t - 1];
+    if (n != '0')
+    {
+      cout << "----" << s.substr(t - 1, t)<<endl;
+      dp[t] += dp[t - 1];
     }
-    return dp[le];
+
+    if (m == '1' || (m == '2' && n <= '6'))
+    {
+      cout << "----" << s.substr(t - 2, t) << endl;
+      dp[t] += dp[t - 2];
+    }
+  }
+  return dp[le];
 }
 
-int main(){
-    string s;
-    cin >>s;
-    cout<<decoder(s)<<endl;
-    return 0;
+int main()
+{
+  string s;
+  cin >> s;
+  cout << decoder(s) << endl;
+  return 0;
 }
