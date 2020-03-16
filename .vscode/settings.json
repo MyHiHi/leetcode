@@ -5,6 +5,8 @@
     "ostream": "cpp",
     "new": "cpp",
     "typeinfo": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "algorithm": "cpp",
+    "iterator": "cpp"
   }
 }
