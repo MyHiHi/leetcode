@@ -26,6 +26,9 @@ r = 1, c = 4
 解释:
 行遍历nums的结果是 [1,2,3,4]。新的矩阵是 1 * 4 矩阵, 用之前的元素值一行一行填充新矩阵。
 */
+#include <vector>
+#include <iostream>
+using namespace std;
 class Solution
 {
 public:
@@ -45,3 +48,8 @@ public:
     return res;
   }
 };
+
+int main()
+{
+  return 0;
+}
