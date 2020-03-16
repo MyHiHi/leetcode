@@ -28,3 +28,10 @@ class Student(Person):
 stu = Student(name="wangming", age=19, school="Henan Politecnic University")
 stu.hello()
 stu.say()
+
+try:
+    pass
+except s:Exception:
+    pass
+finally:
+    pass

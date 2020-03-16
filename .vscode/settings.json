@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.vue": "html",
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "new": "cpp",
+    "typeinfo": "cpp",
+    "*.tcc": "cpp"
+  }
+}
