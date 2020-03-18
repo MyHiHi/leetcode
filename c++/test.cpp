@@ -24,17 +24,25 @@ public:
   {
     cout << "name: " << name << endl;
   }
+  void test()
+  {
+    cout << "Person" << endl;
+  }
 
 private:
   string name;
 };
-class Student : private Person
+class Student : public Person
 {
 public:
   void print()
   {
     printName();
     cout << "Now" << endl;
+  }
+  void test()
+  {
+    cout << "Student" << endl;
   }
 };
 enum Color
@@ -44,8 +52,7 @@ enum Color
 };
 int main()
 {
-  vector<int> p = {1, 5, 3, 4, 2};
-  sort(p.begin(), p.end() - 1);
+
   // cout << *(p.begin() + 1) << endl;
   // for (auto i : p)
   // {
@@ -62,9 +69,15 @@ int main()
   // string d;
   // ss >> d;
   // cout << "string: " << d << endl;
-  Student s1;
+  // Student s1;
   // s1.setName("Mike");
-  s1.print();
-  Color r;
-  return 0;
+  // s1.print();
+  // // Color r;
+  // s1.test();
+  // return 0;
+  vector<int> p(3);
+  for (auto c : p)
+  {
+    cout << c << endl;
+  }
 }
