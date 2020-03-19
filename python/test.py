@@ -1,45 +1,34 @@
-import numpy as np
-# import matplotlib.pyplot as plt
-# x = np.linspace(-10, 10, 1000)
-# y = np.sin(x)+1
-# z = np.cos(x**2)+1
-# plt.figure(figsize=(8, 4))
-# plt.plot(x, y, label='$sin(x)+1$', color='red')
-# plt.plot(x, z, 'b--', label='$cos(x^2)+1$')
-# plt.xlabel = 'Times(s)'
-# plt.ylabel('Value')
-# plt.title('Example')
-# plt.legend(loc='upper right')
-# plt.show()
+import pandas as pd
+import matplotlib.pyplot as plt
+path = r'C:\Users\Administrator\Desktop\文件\Python DataAnalysis\chapter3\demo\data\catering_sale.xls'
 
-# import pandas as pd
-# np.random.seed(12)
-# c = np.random.rand(1, 4, 5)
-# print(c.max())
 
-# data = pd.DataFrame(np.arange(16).reshape(
-#     4, 4), index=list('abcd'), columns=list('ABCD'))
-# print(data)
-# print(data.loc['a':'c', 'A':'B'].T.mean())
-# print(data.iloc[1:3, 1:2].mean()-12)
-# e = pd.read_excel('D:\\3.16.xls', encoding='utf-8', skiprows=3)
-# # print(e)
-# r = e['午检体温']
-# print(r.iloc[:, 0])
-# c = pd.Series([1, 2, 3], index=['a', 'b', 'c'])
-# print(c)
-# a = pd.DataFrame([[1, 2, 3], [3, 4, 5]])
-# print(a)
-# d=pd.DataFrame(c);
-# print(d)
+def analyse(path):
+    data = pd.read_excel(path, index_col='日期')
+    plt.rcParams['font.sans-serif'] = ['SimHei']
+    plt.rcParams['axes.unicode_minus'] = False
+    plt.figure('test')
+    p = data.boxplot(return_type='dict')
+    x, y = p['fliers'][0].get_xdata(), p['fliers'][0].get_ydata()
+    y.sort()
+    for i, v in enumerate(zip(x, y)):
+        a, b = v
+        if i > 0:
+            prev = y[i-1]
+            plt.annotate(b, xy=(a, b), xytext=(a+0.05-0.8/(b-prev), b))
+        else:
+            plt.annotate(b, xy=(a, b), xytext=(a+0.08, b))
 
-from sklearn.linear_model import LinearRegression
-model = LinearRegression()
-X = np.random.randint(1, 100, size=(100)).reshape((20, 5))
-Y = np.random.rand(20)
-# model.fit([[0, 0], [1, 1], [2, 2]], [0, 1, 2])
-# print(X, Y)
-model.fit(X, Y)
-v = model.predict([[1, 3, 2, 3, 4], [1, 45, 2, 3, 4]])
-print(v)
-print(model.coef_)
+    x1, y1 = p['fliers'][1].get_xdata(), p['fliers'][1].get_ydata()
+    y1.sort()
+    for i, v in enumerate(zip(x1, y1)):
+        a, b = v
+        if i > 0:
+            prev = y[i-1]
+            plt.annotate(b, xy=(a, b), xytext=(a+0.05-0.8/(b-prev), b))
+        else:
+            plt.annotate(b, xy=(a, b), xytext=(a+0.08, b))
+    plt.show()
+
+
+analyse(path)

@@ -75,9 +75,7 @@ int main()
   // // Color r;
   // s1.test();
   // return 0;
-  vector<int> p(3);
-  for (auto c : p)
-  {
-    cout << c << endl;
-  }
+  vector<int> p = {1, 4, 3, 45, 5, 6};
+  int y = *find(p.begin(), p.end(), 4);
+  cout << y << endl;
 }
