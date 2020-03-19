@@ -50,6 +50,18 @@ enum Color
   RED,
   BLUE
 };
+string c = "";
+string &get(const string p)
+{
+
+  if (p == "O")
+  {
+    c += "KKK";
+    return c;
+  }
+
+  return c;
+}
 int main()
 {
 
@@ -75,7 +87,8 @@ int main()
   // // Color r;
   // s1.test();
   // return 0;
-  vector<int> p = {1, 4, 3, 45, 5, 6};
-  int y = *find(p.begin(), p.end(), 4);
-  cout << y << endl;
+  // vector<int> p = {1, 4, 3, 45, 5, 6};
+  // int y = *find(p.begin(), p.end(), 4);
+  // cout << y << endl;
+  cout << get("");
 }
