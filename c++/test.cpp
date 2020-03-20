@@ -12,6 +12,8 @@
 #include <algorithm>
 #include <sstream>
 #include <string>
+#include <ctime>
+#include <typeinfo>
 using namespace std;
 class Person
 {
@@ -90,5 +92,32 @@ int main()
   // vector<int> p = {1, 4, 3, 45, 5, 6};
   // int y = *find(p.begin(), p.end(), 4);
   // cout << y << endl;
-  cout << get("");
+  // ios::sync_with_stdio(false);
+  // const int MAXLEN = 100000;
+  // int n[MAXLEN];
+
+  // int start = clock();
+  // freopen("test.txt", "r", stdin);
+  // for (int i = 0; i < MAXLEN; i++)
+  // {
+  //   scanf("%d", &n[i]);
+  // }
+  // printf("scanf : %.3lf\n", double(clock() - start) / CLOCKS_PER_SEC);
+  // start = clock();
+  // freopen("test.txt", "r", stdin);
+  // for (int i = 0; i < MAXLEN; i++)
+  // {
+  //   cin >> n[i];
+  // }
+  // printf("cin : %.3lf\n", double(clock() - start) / CLOCKS_PER_SEC);
+  // ios::sync_with_stdio(false);
+  // int a, b;
+  // scanf("%d", &a);
+  // cin >> b;
+  // cout << a << " " << b << endl;
+  // for (auto i : n)
+  // {
+  //   cout << i << endl;
+  // }
+
 }
