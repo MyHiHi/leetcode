@@ -119,5 +119,8 @@ int main()
   // {
   //   cout << i << endl;
   // }
-
+  // const int p = 1e7;
+  // cout << p;
+  int t, y, u;
+  cout << t == y == u == 0 << endl;
 }
