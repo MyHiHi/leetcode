@@ -64,9 +64,25 @@ string &get(const string p)
 
   return c;
 }
+bool cmp(pair<int, int> x, pair<int, int> y)
+{
+  return x.second < y.second;
+}
 int main()
 {
 
+  int n, i;
+  cin >> n;
+  vector<pair<int, int>> a(n);
+  for (i = 0; i < n; i++)
+  {
+    cin >> a[i].first >> a[i].second;
+  }
+  sort(a.begin(), a.end());
+  for (i = 0; i < n; i++)
+  {
+    cout << a[i].first << " " << a[i].second << endl;
+  }
   // cout << *(p.begin() + 1) << endl;
   // for (auto i : p)
   // {
@@ -121,6 +137,4 @@ int main()
   // }
   // const int p = 1e7;
   // cout << p;
-  int t, y, u;
-  cout << t == y == u == 0 << endl;
 }
