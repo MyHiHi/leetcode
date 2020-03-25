@@ -71,6 +71,7 @@
     "streambuf": "cpp",
     "thread": "cpp",
     "typeindex": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "stack": "cpp"
   }
 }

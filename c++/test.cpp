@@ -1,20 +1,18 @@
 #include <iostream>
-#include <cmath>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include <vector>
 using namespace std;
+
 int main()
 {
-  int x, y;
-  cin >> x >> y;
-  long res = 1;
-  int sum = x + y;
-  int mi = min(x, y);
-  long d1 = 1, d2 = 1;
-  for (int t = 1; t <= mi; t++, sum--)
-  {
-    d1 *= sum;
-    d2 *= t;
-  }
-  cout << d1 / d2;
 
+  vector<int> num(10);
+  generate(begin(num), num.end(), rand);
+  replace_if(
+      num.begin(), num.end(), [](int t) { return t % 2 != 0; }, 0);
+  sort(num.begin(), num.end(), [](int t, int f) { return t > f; });
+  for_each(num.begin(), num.end(), [](int t) { cout << t << " "; });
   return 0;
 }
