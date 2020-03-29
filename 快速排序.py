@@ -13,21 +13,34 @@
 然后再按此方法对这两部分数据分别进行快速排序，
 整个排序过程可以递归进行，以此达到整个数据变成有序。
 '''
+# 一行
+
+
+def quick(lis): return lis if len(lis) < 2 else quick([
+    i for i in lis[1:] if i <= lis[0]])+[lis[0]]+quick([p for p in lis[1:] if p > lis[0]])
+
 
 def quicksort(arr):
-    left,right=[],[];
-    if len(arr)<2:
-      return arr;
-    n=len(arr)
-    point=arr.pop(n//2);
+    left, right = [], []
+    if len(arr) < 2:
+        return arr
+    n = len(arr)
+
+    point = arr.pop(n//2)
+    '''
+    排序+去重的作用：
+    1.point = arr[n//2]
+    2.for循环的else 改为elif k>point:
+    '''
     for k in arr:
-      if k<point:
-        left+=[k];
-      else:
-        right+=[k];
+        if k < point:
+            left += [k]
+        else:
+            right += [k]
     return quicksort(left)+[point]+quicksort(right)
 
 
-arr = [1, 2, 3, 1, 2, 4, 5322, 1,232,12,1,45,6,45,3453,432,42,31,2312,313,1,434]
+arr = [1, 2, 3, 1, 2, 4, 5322, 1, 232, 12, 1, 45,
+       6, 45, 3453, 432, 42, 31, 2312, 313, 1, 434]
 print(quicksort(arr))
 # [1, 1, 1, 1, 1, 2, 2, 3, 4, 6, 12, 31, 42, 45, 45, 232, 313, 432, 434, 2312, 3453, 5322]
